@@ -1,0 +1,21 @@
+# Cluster Architecture
+=> A Kubernetes cluster consists of a control plane plus a set of worker machines, called nodes, that run containerized applications. 
+=> Every cluster needs at least one worker node in order to run Pods.
+
+# Control plane component
+=> kube-apiserver - All commands go through API server. When you run kubectl apply, it talks to API server.
+=> etcd - Cluster database. Stores all configuration + state. Think: Kubernetes memory.
+=> kube-scheduler -  Decides where pods should run.
+=> kube-controller-manager - Ensures desired state = actual state. If a pod dies → controller creates a new one.
+
+# Worker Node Components
+=> Kubelet - Talks to API server and runs containers.
+=> Container Runtime - Runs containers. Examples: containerd, CRI-O
+=> Kube-proxy - Handles networking, Routes traffic to pods.
+
+# Kubernetes Architecture Flow
+Step 1) You run: kubectl apply -f app.yaml
+Step 2) Request goes to API Server -> API server saves configuration in etcd This will become desired state of the Cluster.
+Step 3) Scheduler -> Scheduler checks: CPU availability, Memory, Policies & Picks the best worker node to run container.
+Step 4) Controller -> Controller continuously compares Desired state vs actual state.
+Step 5) Kubelet -> Kubelet on selected node: Talks to container runtime Pulls image, Starts container.
