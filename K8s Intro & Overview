@@ -1,1 +1,17 @@
+# K8s Intro & Overview
+-> The name Kubernetes originates from Greek, meaning helmsman or pilot.
+-> K8s as an abbreviation results from counting the eight letters between the "K" and the "s".
+-> Google open sourced the Kubernetes project in 2014.
 
+# Why Kubernetes
+-> Containers are a good way to bundle and run your applications. In a production environment, you need to manage the containers that run the applications and ensure that there is no           downtime.For example, if a container goes down, another container needs to start. That's how Kubernetes comes to the rescue! 
+-> Kubernetes provides you with a framework to run distributed systems resiliently.
+-> It takes care of scaling and failover for your application, provides deployment patterns, and more. 
+
+# What Kubernetes provides
+-> Service discovery and load balancing
+-> Storage orchestration
+-> Automated rollouts and rollbacks -  You can describe the desired state for your deployed containers using Kubernetes, and it can change the actual state to the desired state.
+-> Automatic bin packing - You tell Kubernetes how much CPU and memory (RAM) each container needs. Kubernetes can fit containers onto your nodes to make the best use of your resources.
+-> Self-healing -  Kubernetes restarts containers that fail, replaces containers, kills containers that don't respond to your user.
+-> Horizontal scaling
