@@ -1,0 +1,14 @@
+There are different ways to set up and run Kubernetes
+
+1) kubectl - The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux
+
+2) kind - lets you run Kubernetes on your local computer. This tool requires that you have either Docker or Podman installed.
+https://kind.sigs.k8s.io/docs/user/quick-start/
+
+3) minikube - Like kind, minikube is a tool that lets you run Kubernetes locally. minikube runs an all-in-one or a multi-node local Kubernetes cluster on your personal computer.
+https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download
+
+4) kubeadm - You can use the kubeadm tool to create and manage Kubernetes clusters. It performs the actions necessary to get a minimum viable, secure cluster up and running in a user friendly way.
+
+ 
