@@ -15,6 +15,7 @@
   $sudo containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
   $sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml 
   $sudo systemctl restart containerd
+  $sudo systemctl status containerd (verify containerd start or not)
 
 # Disable swap:
   $sudo swapoff -a
@@ -31,7 +32,7 @@
   net.ipv4.ip_forward                 = 1
   EOF
   Ctrl + d
-  sudo sysctl --system
+  $sudo sysctl --system
 
 # Install Kubernetes components:
   $curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
