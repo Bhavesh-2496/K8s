@@ -27,3 +27,8 @@ Note:- when you run pod nginx pod it is running on worker node you can verify it
       $curl http://podIP
       You can get pod IP by $kubect get pods -o wide
 
+# Delete running pods
+   kubectl delete pod <pod_name> ---> Delete pod by pod name.
+   kubectl delete pods --all --interactive -----> Delete all pods only if the user confirms the deletion.
+   kubectl delete pods --all -----> Delete all pods without user confirmation.
+
