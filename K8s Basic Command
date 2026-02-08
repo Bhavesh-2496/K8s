@@ -23,3 +23,7 @@
     kubectl describe pods  --> Describe all pods.
     kubectl describe pod <pods_name> --> Describe given pode.
 
+Note:- when you run pod nginx pod it is running on worker node you can verify it by 
+      $curl http://podIP
+      You can get pod IP by $kubect get pods -o wide
+
