@@ -58,11 +58,13 @@ After this we have to run on master node ( control-plan)
   $kubectl get pods --all-namespaces
 
 # Join worker nodes to the cluster:
-  Use the kubeadm join command provided by the kubeadm init output on the master node.
-  Run this command with sudo on each worker node.
+  Use the kubeadm join command provided by the kubeadm init output on the master node as root user or with sudo.
   Before join open port 6443
   $sudo systemctl restart containerd
   $sudo systemctl restart kubelet
+
+# Verify worker node is join run below command on control plan or Master node
+  $kubectl get nodes 
 
   
 
