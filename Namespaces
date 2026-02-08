@@ -1,0 +1,27 @@
+# Namespaces:
+👉 is a logical partition inside a cluster that lets you organize and isolate resources. Think of it like folders inside a computer.
+👉 each namespace holds its own pods, services, deployments, etc.
+👉 One Kubernetes cluster → multiple namespaces → separated environments.
+
+# Why namespaces are used:
+✅ Environment separation (dev / test / prod)
+✅ Multi-team resource isolation
+✅ Access control (RBAC per namespace)
+✅ Resource quotas & limits
+✅ Cleaner organization
+
+# Kubernetes comes with a few built-in namespaces:
+| Namespace           | Purpose                                             |
+| ------------------- | --------------------------------------------------- |
+| **default**         | Where resources go if you don’t specify a namespace |
+| **kube-system**     | System components (DNS, scheduler, controller)      |
+| **kube-public**     | Public readable resources                           |
+| **kube-node-lease** | Node heartbeat tracking                             |
+
+# Basic namespace commands
+👉 Create namespace :- kubectl create namespace dev
+👉 List namespaces :- kubectl get namespaces
+👉 Run pod inside namespace :- kubectl run nginx --image=nginx -n dev
+👉 View resources in namespace :- kubectl get pods -n dev            ($kubectl get pods command look pods in default namesapce).
+👉 List all pods in ps output format with more information in namespace :- kubectl get pods -o wide -n dev
+👉 Print a detailed description of pods in namespace :- kubectl describe pods -n dev
