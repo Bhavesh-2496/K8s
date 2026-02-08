@@ -1,13 +1,25 @@
 # No need to remeber all command you will get command list by  $kubectl --help
 
 # Basic Command 
-  # kubectl get nodes - list all nodes include Master & Worker.
-  # kubectl get pods - List all pods in ps output format (for pods command atlest one pod running in cluster).
-  # kubectl get pods -o wide - List all pods in ps output format with more information.
+   kubectl get <resource_type> <resource_name> ----> Prints a table of the most important information about the specified resources.
+   kubectl get <resource_type> -o wide <resource_name> ----> List resource in ps output format with more information.
+   kubectl describe <resource_type> <resource_name> ----> Print a detailed description of the selected resources like node, pod, deployment, services etc.
+   
+   
+   kubectl get nodes --> list all nodes include Master & Worker.
+   kubectl get nodes -o wide --> List all nodes in ps output format with more information.
+   kubectl get nodes -o wide <node_name> ---> List given nodes in ps output format with more information.
+   kubectl describe nodes  --> Describe all nodes.
+   kubectl describe node <node_name> --> Describe given node.
+   
+     
 
-  # kubectl describe <resource_type> <resource_name> - Print a detailed description of the selected resources like node, pod, deployment, services etc.
-    # kubectl describe nodes  - Describe all nodes.
-    # kubectl describe node <node_name> - Describe given node.
-    # kubectl describe pods  - Describe all pods.
-    # kubectl describe pod <pods_name> - Describe given pode.
-    #
+# Create and run a particular image in a pod.
+    kubectl run nginx --image=nginx --> Start a nginx pod
+    kubectl run webserver --image=nginx --> Start a nginx pod with podname "webserver"
+    kubectl get pods --> List all pods in ps output format (for pods command atlest one pod running in cluster).
+    kubectl get pod <pod_name> --> List pod given name.
+    kubectl get pods -o wide --> List all pods in ps output format with more information.
+    kubectl describe pods  --> Describe all pods.
+    kubectl describe pod <pods_name> --> Describe given pode.
+
