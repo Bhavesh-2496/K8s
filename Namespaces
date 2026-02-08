@@ -26,5 +26,9 @@
 👉 List all pods in ps output format with more information in namespace :- kubectl get pods -o wide -n dev
 👉 Print a detailed description of pods in namespace :- kubectl describe pods -n dev
 👉 List all pods existing in all namespaces :- kubectl get pods --all-namespaces
+👉 Delete resources in namespace :- kubectl delete <resource_type> <resource_name> -n <namespace>
+  Example :- if i want to delete pod of dev namespace by $kubectl delete pod webserver -n dev. 
+    
+
 
 Note :- if you dont specify namespace when creating any resource it will create in default namespace.
