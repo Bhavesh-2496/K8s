@@ -1,6 +1,6 @@
-# No need to remeber all command you will get command list by  $kubectl --help
+👉 No need to remeber all command you will get command list by  $kubectl --help
 
-# Basic Command 
+👉 Basic Command 
    kubectl get <resource_type> <resource_name> ----> Prints a table of the most important information about the specified resources.
    kubectl get <resource_type> -o wide <resource_name> ----> List resource in ps output format with more information.
    kubectl describe <resource_type> <resource_name> ----> Print a detailed description of the selected resources like node, pod, deployment, services etc.
@@ -14,7 +14,7 @@
    
      
 
-# Create and run a particular image in a pod.
+👉 Create and run a particular image in a pod.
     kubectl run nginx --image=nginx --> Start a nginx pod
     kubectl run webserver --image=nginx --> Start a nginx pod with podname "webserver"
     kubectl get pods --> List all pods in ps output format (for pods command atlest one pod running in cluster).
@@ -27,7 +27,7 @@ Note:- when you run pod nginx pod it is running on worker node you can verify it
       $curl http://podIP
       You can get pod IP by $kubect get pods -o wide
 
-# Delete running pods
+👉 Delete running pods
    kubectl delete pod <pod_name> ---> Delete pod by pod name.
    kubectl delete pods --all --interactive -----> Delete all pods only if the user confirms the deletion.
    kubectl delete pods --all -----> Delete all pods without user confirmation.
