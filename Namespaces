@@ -18,10 +18,13 @@
 | **kube-public**     | Public readable resources                           |
 | **kube-node-lease** | Node heartbeat tracking                             |
 
-# Basic namespace commands
+# Basic namespace commands 
 👉 Create namespace :- kubectl create namespace dev
 👉 List namespaces :- kubectl get namespaces
 👉 Run pod inside namespace :- kubectl run nginx --image=nginx -n dev
 👉 View resources in namespace :- kubectl get pods -n dev            ($kubectl get pods command look pods in default namesapce).
 👉 List all pods in ps output format with more information in namespace :- kubectl get pods -o wide -n dev
 👉 Print a detailed description of pods in namespace :- kubectl describe pods -n dev
+👉 List all pods existing in all namespaces :- kubectl get pods --all-namespaces
+
+Note :- if you dont specify namespace when creating any resource it will create in default namespace.
