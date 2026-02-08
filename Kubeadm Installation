@@ -66,6 +66,12 @@ After this we have to run on master node ( control-plan)
 # Verify worker node is join run below command on control plan or Master node
   $kubectl get nodes 
 
+👉 If you dont copy kubeadm join command provided by the kubeadm init output on the master node You can regenerate the Kubernetes join command
+  kubeadm token create --print-join-command
+⚠ If worker node was already joined earlier you can reset it & rejoin Cluster by join command.
+  kubeadm reset -f 
+
+
   
 
 
