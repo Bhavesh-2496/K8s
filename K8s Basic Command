@@ -1,0 +1,13 @@
+# No need to remeber all command you will get command list by  $kubectl --help
+
+# Basic Command 
+  # kubectl get nodes - list all nodes include Master & Worker.
+  # kubectl get pods - List all pods in ps output format (for pods command atlest one pod running in cluster).
+  # kubectl get pods -o wide - List all pods in ps output format with more information.
+
+  # kubectl describe <resource_type> <resource_name> - Print a detailed description of the selected resources like node, pod, deployment, services etc.
+    # kubectl describe nodes  - Describe all nodes.
+    # kubectl describe node <node_name> - Describe given node.
+    # kubectl describe pods  - Describe all pods.
+    # kubectl describe pod <pods_name> - Describe given pode.
+    #
