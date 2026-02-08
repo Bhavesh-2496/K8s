@@ -1,21 +1,21 @@
 # Traditional deployment era
--> Early on, organizations ran applications on physical servers. 
--> There was no way to define resource boundaries for applications in a physical server, and this caused resource allocation issues. 
--> For example, if multiple applications run on a physical server, there can be instances where one application would take up most of the resources.
--> As a result, the other applications would underperform. 
--> A solution for this would be to run each application on a different physical server. 
--> this did not scale as resources were underutilized, and it was expensive for organizations to maintain many physical servers.
+👉 Early on, organizations ran applications on physical servers. 
+👉 There was no way to define resource boundaries for applications in a physical server, and this caused resource allocation issues. 
+👉 For example, if multiple applications run on a physical server, there can be instances where one application would take up most of the resources.
+👉 As a result, the other applications would underperform. 
+👉 A solution for this would be to run each application on a different physical server. 
+👉 this did not scale as resources were underutilized, and it was expensive for organizations to maintain many physical servers.
 
 # Virtualized deployment era
--> As a solution, virtualization was introduced. 
--> It allows you to run multiple Virtual Machines (VMs) on a single physical server's CPU. 
--> Virtualization allows applications to be isolated between VMs and provides a level of security as the information of one application cannot be freely accessed by another application.
--> Virtualization allows better utilization of resources in a physical server and allows better scalability because an application can be added or updated easily, reduces hardware costs, and much more.
--> VM runs on top of a hypervisor, which adds an extra layer between hardware and OS provide Slower performance than bare metal.
--> Each VM includes a full operating system result High RAM consumption, Large disk usage, Slower boot time.
--> Limited scalability - Spinning up many VMs takes time and consumes infrastructure resources.
--> Management complexity - Multiple VMs require patching, monitoring, and OS maintenance.
--> Cost - Licensing (OS + hypervisor), Hardware requirements, Maintenance cost.
+👉 As a solution, virtualization was introduced. 
+👉 It allows you to run multiple Virtual Machines (VMs) on a single physical server's CPU. 
+👉 Virtualization allows applications to be isolated between VMs and provides a level of security as the information of one application cannot be freely accessed by another application.
+👉 Virtualization allows better utilization of resources in a physical server and allows better scalability because an application can be added or updated easily, reduces hardware costs, and much more.
+👉 VM runs on top of a hypervisor, which adds an extra layer between hardware and OS provide Slower performance than bare metal.
+👉 Each VM includes a full operating system result High RAM consumption, Large disk usage, Slower boot time.
+👉 Limited scalability - Spinning up many VMs takes time and consumes infrastructure resources.
+👉 Management complexity - Multiple VMs require patching, monitoring, and OS maintenance.
+👉 Cost - Licensing (OS + hypervisor), Hardware requirements, Maintenance cost.
 
 # Container deployment era:
 -> Virtual Machines and Containers both let you run applications in isolated environments
