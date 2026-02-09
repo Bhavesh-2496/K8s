@@ -32,3 +32,7 @@ Note:- when you run pod nginx pod it is running on worker node you can verify it
    kubectl delete pods --all --interactive -----> Delete all pods only if the user confirms the deletion.
    kubectl delete pods --all -----> Delete all pods without user confirmation.
 
+👉 Execute command in container
+   Before execute command in container you have to open port 10250
+   kubectl exec -it webserver --bash
+
