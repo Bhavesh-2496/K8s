@@ -71,6 +71,15 @@ After this we have to run on master node ( control-plan)
 ⚠ If worker node was already joined earlier you can reset it & rejoin Cluster by join command.
   kubeadm reset -f 
 
+----------------------------------------------------------------------------------------------------
+👉 Key Reasons for Opening Port 6443
+Control Plane to API Server:--- Other control plane components, such as the kube-controller-manager and kube-scheduler, communicate with the API server over this port.
+Worker Nodes to API Server:--- Worker nodes must be able to connect to the API server to receive instructions (e.g., which pods to run), report status, and access information.
+Clients to API Server:--- Users and external clients using tools like kubectl connect to this port to interact with the cluster.
+
+👉 Port 10256 :- kube-proxy health check server. This endpoint, usually at 0.0.0.0:10256/healthz, allows load balancers or other components to verify that the kube-proxy service is running and properly managing network rules for Kubernetes Services, ensuring the node's network health. 
+
+👉 Port 10250 :- it is the default secure port used by the Kubelet. The Kubelet is the primary node agent that ensures containers are running in a pod and healthy. 
 
   
 
