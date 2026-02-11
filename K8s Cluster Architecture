@@ -1,0 +1,100 @@
+-> Purpose of Kubernates to host your application in the form of container in an automated fashion so you can easily deploy manny instances of your application.
+There are two kind of ships the cargo ships carry container and controll ship responcible managing & monitoring cargo ships.
+-> Kubernates cluster consist a set of nodes it may physical or vertual on premises or on cloude that host application in the form of containers.
+-> Worker nodes are cargo ships that can load container.
+-> Master nodes needs to load container not just load plan how to load, identify the right ships, store information about the ships, monitor and track location of container in the ships, manage whole loading process etc. Master node does this set of component known as the controll plane container.
+=> etcd - it is database that store information in the key-value formate.
+=> node controller - responcible for onboarding ner nodes in controller.
+=> Kube API server - is primary management component of kubernates cluster.
+=> Kube Scheduler - decide which pods on which nodes depend of resource capacity & pod requirement.
+=> kubelet - create pods instructed by scheduler by container run-time environmernt and upadte to       API server.
+=> Kube Proxy - process run on each nodes of cluster. create ip table rule depend on new service for     forword traffic.
+=> pods - smallest object that you create in kubernates. single pods can have multiple container but not same kind. kubernates create helper container automaticaly
+
+=> YML file - kunernates uses to create resource such as pods, services, deployment etc
+Example:
+  apiVersion: v1
+  kind: pod
+  metadata: 
+    name: myapp-pod
+    labels: 
+      app: myapp
+      type: FE
+  spec:
+    containers:
+      - name: nginx-container
+        image: nginx
+
+kubectl create -f pod.yml
+----------------------------------------------------------------------------------------------
+Replication controller:
+  Help to running multiple instances of a single pod in cluster to provide high-availability.
+  if you have single pod it helps to bring up new pod if existing fail.
+  it ensures spefied number of pods running at all time.
+  used to create multiple pod in same or other node to share load across them.
+Replicaset:
+  it is new version of replication controller.
+
+How to create Replication
+---------------------------
+  apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: Myapp-rc
+    labels:
+      app: myapp
+      type: fornt-end
+  spec:
+    templete:
+      metadata:
+        containers:
+          name: myapp
+          labels: 
+            app: myapp
+            type: FE
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+  replicas: 3
+
+kubectl apply -f replica.yml
+kubectl get replicationcontroller
+
+Replicaset
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: Myapp-rc
+    labels:
+      app: myapp
+      type: fornt-end
+  spec:
+    templete:
+      metadata:
+        containers:
+          name: myapp
+          labels: 
+            app: myapp
+            type: FE
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+replicas: 3
+selector:
+  matchLabels:
+    type: front-end
+--------------------------------------------------------
+How to scale replica
+kubectl scale --replicas=6 -f replica.yml
+
+
+  
+
+    
+  
+    
+
+
