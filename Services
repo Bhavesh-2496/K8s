@@ -1,0 +1,30 @@
+Services:
+  1.it enable communication between varius components within and outside of the application.
+  1. It helps connects application together with other applications & users.
+  3. for example in our application groups of pods running like frontend group pods, dbackend group of pods.
+  4. you can not acccess webapplication running in pod from your laptop beacause pods in other network you can accces it only from node.
+
+Nord Port service:
+  it helps us access pod by mapping port.
+  webserver running in pods at 80 port it is target port
+  2nd ports is service ports. it has ip address is called cluster ip of service.
+  port on the node itself is called node port 30000-32767
+
+YML file to create service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+
+spec:
+  type: Nodeport
+  ports:
+  - targetPort: 80  
+    port: 80
+    nodePort: 30008
+  selector:
+    pull lable from pod.yml file
+
+
+
